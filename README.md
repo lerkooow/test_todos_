@@ -10,6 +10,8 @@ React, TypeScript, Redux Toolkit, MUI
 
 ## Ссылка на деплой проекта:
 
+https://test-todos-gtv9.vercel.app/
+
 ## Установка и запуск приложения:
 
 1.Клонировать репозиторий на свое устройство git clone https://github.com/lerkooow/test_todos_
