@@ -14,14 +14,13 @@ import { Box, Typography, Button, Checkbox } from "@mui/material";
 function TodoItem() {
   const todo = useSelector(selectAllTodo);
   const deletedTodo = useSelector(selectDeletedTodo);
-  console.log("🚀 ~ TodoItem ~ deletedTodo:", deletedTodo);
   const dispatch = useDispatch();
 
   const [filter, setFilter] = useState("all");
 
-  const totalTodos = todo.length;
-  const activeTodos = todo.filter((todo) => !todo.checked).length;
-  const completedTodos = todo.filter((todo) => todo.checked).length;
+  const totalTodo = todo.length;
+  const activeTodo = todo.filter((todo) => !todo.checked).length;
+  const completedTodo = todo.filter((todo) => todo.checked).length;
 
   const filteredTodo =
     filter === "deleted"
@@ -60,9 +59,8 @@ function TodoItem() {
               onChange={() => dispatch(toggleTodo(item.id))}
               color="default"
               inputProps={{ "aria-label": item.task }}
-              data-testid={`check-${item.id}`}
               sx={{ mr: 2 }}
-              disabled={filter === "deleted"} // Отключить изменение статуса задач в корзине
+              disabled={filter === "deleted"}
             />
             <Typography
               variant="body1"
@@ -73,7 +71,6 @@ function TodoItem() {
           </Box>
           {filter === "deleted" ? (
             <Button
-              data-testid={`remove-${item.id}`}
               onClick={() => dispatch(removeFromDeleted(item.id))}
               sx={{ color: "red", "&:hover": { color: "darkred" } }}
             >
@@ -81,7 +78,6 @@ function TodoItem() {
             </Button>
           ) : (
             <Button
-              data-testid={`delete-${item.id}`}
               onClick={() => dispatch(deleteTask(item.id))}
               sx={{ color: "red", "&:hover": { color: "darkred" } }}
             >
@@ -98,13 +94,13 @@ function TodoItem() {
       <TodoAddTask />
       <Box
         sx={{
-          borderTop: "1px solid lightgray",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
           textAlign: "center",
           alignItems: "center",
           boxShadow: 1,
+          borderRadius: "8px",
         }}
       >
         <Box sx={{ p: "24px" }}>
@@ -116,7 +112,7 @@ function TodoItem() {
               color: "#180C0C",
             }}
           >
-            Все дела ({totalTodos})
+            Все дела ({totalTodo})
           </Button>
           <Button
             onClick={() => setFilter("active")}
@@ -126,7 +122,7 @@ function TodoItem() {
               color: "#180C0C",
             }}
           >
-            Текущие дела ({activeTodos})
+            Текущие дела ({activeTodo})
           </Button>
           <Button
             onClick={() => setFilter("completed")}
@@ -136,7 +132,7 @@ function TodoItem() {
               color: "#180C0C",
             }}
           >
-            Выполненные дела ({completedTodos})
+            Выполненные дела ({completedTodo})
           </Button>
           <Button sx={{ color: "#ED413E", "&:hover": { color: "darkred" } }} onClick={() => setFilter("deleted")}>
             Корзина
@@ -145,10 +141,9 @@ function TodoItem() {
         <Box
           sx={{
             p: "0 24px 24px 24px",
-            borderRadius: "8px",
             width: "100%",
             maxWidth: "700px",
-            height: "400px",
+            height: "310px",
             overflow: "auto",
           }}
         >

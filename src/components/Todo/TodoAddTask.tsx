@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addTodo, clearAll } from "../../toolkitRedux/todoSlice";
 import AddIcon from "@mui/icons-material/Add";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
-import { TextField, Button, Box } from "@mui/material";
+import { TextField, Button, Box, Typography } from "@mui/material";
 
 function TodoAddTask() {
   const [task, setTask] = useState("");
@@ -47,14 +47,14 @@ function TodoAddTask() {
           display: "flex",
           alignItems: "center",
           gap: 1,
-          padding: "10px 40px",
+          padding: { xs: "10px 0", sm: "10px 40px" },
           "&:hover": {
             backgroundColor: "#333",
           },
         }}
       >
         <AddIcon style={{ color: "white" }} />
-        Добавить
+        <Typography sx={{ display: { xs: "none", sm: "inline" } }}>Добавить</Typography>
       </Button>
       <TextField
         fullWidth
@@ -81,13 +81,13 @@ function TodoAddTask() {
           display: "flex",
           alignItems: "center",
           gap: 1,
-          padding: "10px 40px",
+          padding: { xs: "10px 0", sm: "10px 40px" },
           "&:hover": {
             backgroundColor: "#d63531",
           },
         }}
       >
-        Очистить
+        <Typography sx={{ display: { xs: "none", sm: "inline" } }}>Очистить</Typography>
         <ClearAllIcon style={{ color: "white" }} />
       </Button>
     </Box>

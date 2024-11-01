@@ -21,7 +21,6 @@ function Todo() {
         position: "relative",
       }}
     >
-      {" "}
       <Button
         onClick={handleLogout}
         sx={{

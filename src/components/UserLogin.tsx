@@ -84,7 +84,6 @@ function UserLogin({ onLogin }: UserLoginProps) {
         sx={{
           maxWidth: "500px",
           padding: "24px",
-          backgroundColor: "#f5f5f5",
           borderRadius: "8px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
