@@ -32,7 +32,7 @@ function TodoAddTask() {
         display: "flex",
         alignItems: "center",
         gap: "16px",
-        padding: "32px",
+        p: "32px",
         backgroundColor: "white",
         borderRadius: "8px",
         boxShadow: 1,
@@ -47,7 +47,7 @@ function TodoAddTask() {
           display: "flex",
           alignItems: "center",
           gap: 1,
-          padding: { xs: "10px 0", sm: "10px 40px" },
+          p: { xs: "10px 0", sm: "10px 40px" },
           "&:hover": {
             backgroundColor: "#333",
           },
@@ -68,7 +68,7 @@ function TodoAddTask() {
             borderColor: "#180C0C",
           },
           ".MuiOutlinedInput-input": {
-            padding: "11px 14px",
+            p: "11px 14px",
           },
         }}
       />
@@ -81,7 +81,7 @@ function TodoAddTask() {
           display: "flex",
           alignItems: "center",
           gap: 1,
-          padding: { xs: "10px 0", sm: "10px 40px" },
+          p: { xs: "10px 0", sm: "10px 40px" },
           "&:hover": {
             backgroundColor: "#d63531",
           },

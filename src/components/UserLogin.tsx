@@ -83,14 +83,14 @@ function UserLogin({ onLogin }: UserLoginProps) {
       <Box
         sx={{
           maxWidth: "500px",
-          padding: "24px",
+          p: "24px",
           borderRadius: "8px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
         <Typography
           variant="h1"
-          sx={{ textAlign: "center", marginBottom: "24px", fontWeight: 700, fontSize: "60px", color: "#180C0C" }}
+          sx={{ textAlign: "center", mb: "24px", fontWeight: 700, fontSize: "60px", color: "#180C0C" }}
         >
           Вход
         </Typography>
@@ -128,8 +128,8 @@ function UserLogin({ onLogin }: UserLoginProps) {
           variant="contained"
           fullWidth
           sx={{
-            marginTop: "16px",
-            padding: "12px",
+            mt: "16px",
+            p: "12px",
             backgroundColor: "#180C0C",
             "&:hover": {
               backgroundColor: "#474646",
