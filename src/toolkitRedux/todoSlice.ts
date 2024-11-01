@@ -38,7 +38,7 @@ const todoSlice = createSlice({
       const todo = state.todo.find((item) => item.id === todoId);
       if (todo) {
         todo.checked = !todo.checked;
-        localStorage.setItem("todos", JSON.stringify(state.todo));
+        localStorage.setItem("todo", JSON.stringify(state.todo));
       }
     },
     deleteTask(state, action: PayloadAction<number>) {
@@ -54,7 +54,7 @@ const todoSlice = createSlice({
     clearAll(state) {
       state.deletedTodo.push(...state.todo);
       state.todo = [];
-      localStorage.setItem("todos", JSON.stringify(state.todo));
+      localStorage.setItem("todo", JSON.stringify(state.todo));
       localStorage.setItem("deletedTodo", JSON.stringify(state.deletedTodo));
     },
     removeFromDeleted(state, action: PayloadAction<number>) {
